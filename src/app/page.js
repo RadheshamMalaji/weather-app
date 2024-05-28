@@ -21,7 +21,7 @@ export default function Home() {
     setLoading(false)
   }
   console.log(city)
-  const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${process.env.NEXT_PUBLIC_WEATHER_KEY}`
+  const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${process.env.NEXT_PUBLIC_WEATHER_KEY}`
   if(loading){
     return <Spinner/>
   }
