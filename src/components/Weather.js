@@ -15,7 +15,7 @@ const Weather = (props) => {
         }).catch(error => {
             alert("invalid input")
         })
-    }, [])
+    }, [data])
 
     return (
         <>

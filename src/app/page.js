@@ -35,6 +35,7 @@ export default function Home() {
       <Image 
       style={{height:"50%"}}
         className='object-cover img-style'
+        alt="/"
         src={Sealink} />
         </div>
       <div className=' relative  max-w-[500px] h-[50%] w-full m-auto pt-4 text-white z-10'>
