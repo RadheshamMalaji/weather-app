@@ -41,9 +41,10 @@ const Weather = (props) => {
                             {data.weather[0].main}
                         </p>
                     </div>
-
                 </div>
-                <p className='text-white'>{moment(date).format('MMMM Do, HH:mm')}</p>
+                <div className='pb-3'>
+                    <p className='text-white'>{moment(date).format('MMMM Do, HH:mm')}</p>
+                </div>
             </div>
             <div className='pt-4 pl-4 pr-4 flex justify-between'>
                 <button className='button text-black border'>

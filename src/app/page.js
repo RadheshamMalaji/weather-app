@@ -41,7 +41,7 @@ export default function Home() {
         <div className='flex  justify-between items-center'>
         <form onSubmit={featchWeather} className='flex justify-between items-center w-full m-auto p-3 bg-transparent border border-gray-300 text-white rounded-2xl'>
           <div>
-            <input value={city} onChange={(e)=>setCity(e.target.value)} className='bg-transparent border-none text-white focus:outline-none text-2xl placeholder:text-white/55' type={"text"} placeholder="Search City" />
+            <input value={city} onChange={(e)=>setCity(e.target.value)} className='bg-transparent border-none w-[100%] text-white focus:outline-none text-2xl placeholder:text-white/55' type={"text"} placeholder="Search City" />
           </div>
           <button onClick={featchWeather}><BsSearch size={20}/></button>
         </form>
