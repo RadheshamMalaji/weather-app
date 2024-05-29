@@ -2,11 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
-.img-style{
+.img-style {
     position: absolute;
     height: 50%;
     width: 100%;
     inset: 0px;
     color: transparent;
     border-radius: 0 0 35px 35px;
+}
+
+.button {
+    width: 166px;
+    height: 42px;
+    font-size: 16px;
+    font-weight: 400;
+    border-radius: 14px;
+    background-color: #E0B6FF;
 }
