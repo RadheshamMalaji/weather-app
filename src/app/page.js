@@ -14,7 +14,6 @@ export default function Home() {
   const featchWeather = (e) => {
     e.preventDefault();
     setLoading(true);
-    
     axios.get(url).then((response) => {
       setWeather(response.data)
     }).catch(error=>{
@@ -32,22 +31,25 @@ export default function Home() {
     <div className='h-[100vh]'>
       <div style={{backgroundColor:"#F6EDFF"}} className='absolute top-0 left-0 right-0 bottom z-[1]' />
       <div>
-      <Image 
-      style={{height:"50%"}}
-        className='object-cover img-style'
-        alt="/"
-        src={Sealink} />
+     
         </div>
-      <div className=' relative  max-w-[500px] h-[50%] w-full m-auto pt-4 text-white z-10'>
-        <div className='flex  justify-between items-center'>
-        <form onSubmit={featchWeather} className='flex justify-between items-center w-full m-auto p-3 bg-transparent border border-gray-300 text-white rounded-2xl'>
+      <div className='bg-img sm:w-[500px] h-[50%] lg:w-full m-auto text-white z-10'>
+        <div className='flex h-[20%] pt-1 sm:justify-between lg:justify-end items-center'>
+        <form 
+            onSubmit={featchWeather} 
+            className='flex justify-between items-center sm:w-full lg:w-[400px] sm:m-auto lg:m-[0px] p-1 pr-3 pl-3 bg-transparent border border-gray-300 text-white rounded-2xl'>
           <div>
-            <input value={city} onChange={(e)=>setCity(e.target.value)} className='bg-transparent border-none w-[100%] text-white focus:outline-none text-2xl placeholder:text-white/55' type={"text"} placeholder="Search City" />
+          <input
+            value={city.toUpperCase()}
+            onChange={(e)=>setCity(e.target.value)} 
+            className='bg-transparent border-none w-[100%] text-white focus:outline-none text-2xl placeholder:text-white/55' 
+            type={"text"} 
+            placeholder="Search City"/>
           </div>
           <button onClick={featchWeather}><BsSearch size={20}/></button>
         </form>
         </div>
-        <div className='block h-[85%]'>
+        <div className='block h-[80%]'>
              {weather.main && <Weather data={weather}/>}
         </div>
       </div>

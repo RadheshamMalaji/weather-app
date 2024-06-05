@@ -19,3 +19,12 @@
     border-radius: 14px;
     background-color: #E0B6FF;
 }
+
+.bg-img{
+    background-image: url("../../public/sealink.jpeg");
+    border-radius: 0 0 35px 35px;
+    background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
