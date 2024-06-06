@@ -16,10 +16,12 @@ export default function Home() {
     setLoading(true);
     axios.get(url).then((response) => {
       setWeather(response.data)
+      setLoading(false)
     }).catch(error=>{
       alert("invalid input")
+      setLoading(false)
     })
-    setLoading(false)
+   
   }
   console.log(city)
   const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${process.env.NEXT_PUBLIC_WEATHER_KEY}`
@@ -34,26 +36,25 @@ export default function Home() {
      
         </div>
       <div className='bg-img sm:w-[500px] h-[50%] lg:w-full m-auto text-white z-10'>
-        <div className='flex h-[20%] pt-1 sm:justify-between lg:justify-end items-center'>
+        <div className='flex h-[20%] pt-1 justify-center lg:justify-end items-center'>
         <form 
             onSubmit={featchWeather} 
-            className='flex justify-between items-center sm:w-full lg:w-[400px] sm:m-auto lg:m-[0px] p-1 pr-3 pl-3 bg-transparent border border-gray-300 text-white rounded-2xl'>
+            className='flex justify-between items-center w-full lg:w-[400px] p-1 pr-3 pl-3 bg-white border border-gray-300 rounded-2xl'>
           <div>
           <input
             value={city.toUpperCase()}
             onChange={(e)=>setCity(e.target.value)} 
-            className='bg-transparent border-none w-[100%] text-white focus:outline-none text-2xl placeholder:text-white/55' 
+            className='bg-white border-none w-[100%] text-black focus:outline-none text-2xl placeholder:text-white/55' 
             type={"text"} 
             placeholder="Search City"/>
           </div>
-          <button onClick={featchWeather}><BsSearch size={20}/></button>
+          <button onClick={featchWeather}><BsSearch color="black" size={20}/></button>
         </form>
         </div>
         <div className='block h-[80%]'>
              {weather.main && <Weather data={weather}/>}
         </div>
       </div>
-      
     </div>
   );
       }
